@@ -7,11 +7,10 @@ import pandas as pd
 import joblib
 from nltk.tokenize import word_tokenize
 import importlib
-from word_abbreviations import get_abbr
-from word_preprocess import clean_tweet
+from .word_preprocess import clean_tweet
+from .word_abbreviations import get_abbr
 
-word_abbreviations = __import__("word_abbreviations")
-abbreviations = word_abbreviations.get_abbr()
+abbreviations = get_abbr()
 
 def take_tfidf():
     pick = pd.read_pickle(r"C:\Users\Thejin\Desktop\Deep Learning\rexcoe\models\tfidf_vectorizer.pickle")

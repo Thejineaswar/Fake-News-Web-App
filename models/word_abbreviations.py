@@ -224,4 +224,3 @@ def get_abbr():
     }
     return abbreviations
 
-importlib.import_module("word_abbreviations")
