@@ -1,9 +1,13 @@
 from flask import Flask, request,jsonify,render_template
 import numpy as np
+from models.humour_detection import *
 from models.svc import load_model,predict
 model = load_model()
-print("Model has been loaded")
+print("Fake News Model has been loaded")
+# svc = define_svc()
+# print("Humour model has been loaded")
 app = Flask(__name__)
+
 
 
 @app.route('/')
@@ -18,6 +22,9 @@ def fakeNews():
         res = "real news"
     else:
         res = "fake news"
+
+    # res_1 = predict_humour(value[0])
+    # print(res_1)
     return render_template('index.html',prediction_text = f"This is {res}")
 
 
