@@ -32,6 +32,7 @@ def predict(data):
     model = load_model()
     res = model.predict(text)
     print(res)
+    return res
 
 # if __name__ == "__main__":
 #     sentence = "earthquake safety los angeles safety fasteners"

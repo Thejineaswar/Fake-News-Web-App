@@ -13,13 +13,11 @@ def hello_world():
 @app.route('/fakeNews',methods=['POST'])
 def fakeNews():
     value = [i for i in request.form.values()]
-    print(value[0])
     res = predict(value[0])
-    print(res)
     if(res==1):
-        res = True
+        res = "real news"
     else:
-        res = False
+        res = "fake news"
     return render_template('index.html',prediction_text = f"This is {res}")
 
 
